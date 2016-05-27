@@ -8,11 +8,13 @@
       <input class="btn btn-primary" type="submit" value="Add">
     </form> -->
     <div class="form-group">
-      <form ng-submit="todoList.addTodo()">
+      <form ng-submit="todoList.submit()">
       <label>Paragraph:</label>
-      <textarea ng-model="todoList.textarea" class="form-control" rows="10" id="Paragraph"></textarea>
-      <input style="margin-top: 8px"class="btn btn-primary" type="submit" value="Add">
+      <textarea ng-model="todoList.userInput" class="form-control" rows="10" id="Paragraph"></textarea>
+      <input style="margin-top: 8px"class="btn btn-primary" type="submit" value="Search">
       </form>
     </div>
+    <span ng-if="todoList.result.length > 0">Result <br/></span>
+    <span ng-repeat="line in todoList.result">{{line}}<br /></span>
   </div>
 </div>
